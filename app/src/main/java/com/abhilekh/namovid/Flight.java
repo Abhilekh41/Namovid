@@ -9,6 +9,7 @@ import static com.abhilekh.namovid.GameView.screenRationY;
 
 public class Flight
 {
+    int toShoot=0;
     boolean isGoingUp = false;
     int x,y,width,height, wingcounter = 0;
     Bitmap flight1,flight2;
@@ -38,6 +39,11 @@ public class Flight
 
     Bitmap getFlight()
     {
+        if(toShoot!=0)
+        {
+            toShoot--;
+            gameView.newBullet();
+        }
         if(wingcounter==0)
         {
             wingcounter++;

@@ -5,7 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
-import android.widget.Switch;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameView extends SurfaceView implements Runnable{
 
@@ -22,6 +24,8 @@ public class GameView extends SurfaceView implements Runnable{
     private Paint paint;
 
     public static float screenRationX, screenRationY;
+
+    private List<Bullet> bullets;
 
     private Flight flight;
 
@@ -40,7 +44,7 @@ public class GameView extends SurfaceView implements Runnable{
 
         flight = new Flight(this,screeny,getResources());
 
-
+        bullets = new ArrayList<>();
         paint = new Paint();
     }
 
@@ -97,6 +101,22 @@ public class GameView extends SurfaceView implements Runnable{
 
         if(flight.y>screeny - flight.height)
             flight.y= screeny-flight.height;
+
+        List<Bullet> trash = new ArrayList<>();
+        for(Bullet bullet : bullets)
+        {
+            if(bullet.x>screenx)
+            {
+                trash.add(bullet);
+            }
+
+            bullet.x += 50*screenRationX;
+        }
+
+        for(Bullet bullet : trash)
+        {
+            bullets.remove(bullet);
+        }
     }
 
     private void draw()
@@ -109,6 +129,10 @@ public class GameView extends SurfaceView implements Runnable{
 
             canvas.drawBitmap(flight.getFlight(),flight.x,flight.y,paint);
 
+            for(Bullet bullet :bullets)
+            {
+                canvas.drawBitmap(bullet.bullet,bullet.x,bullet.y,paint);
+            }
             getHolder().unlockCanvasAndPost(canvas);
 
         }
@@ -136,7 +160,19 @@ public class GameView extends SurfaceView implements Runnable{
                 break;
             case MotionEvent.ACTION_UP:
                 flight.isGoingUp=false;
+                if(event.getX()>screenx/2)
+                {
+                    flight.toShoot++;
+                }
         }
         return true;
+    }
+
+    public void newBullet()
+    {
+        Bullet bullet  = new Bullet(getResources());
+        bullet.x = flight.x+flight.width;
+        bullet.y = flight.y+(flight.height/2);
+        bullets.add(bullet);
     }
 }

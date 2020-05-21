@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
                 if(isMute)
                 {
-                    volumeControl.setImageResource(R.drawable.ic_volume_off_black_24dp);
+                    volumeControl.setImageResource(R.drawable.ic_volume_up_black_24dp);
                 }
                 else
                 {
-                    volumeControl.setImageResource(R.drawable.ic_volume_up_black_24dp);
+                    volumeControl.setImageResource(R.drawable.ic_volume_off_black_24dp);
                 }
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();

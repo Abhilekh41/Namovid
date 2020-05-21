@@ -3,21 +3,22 @@ package com.abhilekh.namovid;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 
 import static com.abhilekh.namovid.GameView.screenRationX;
 import static com.abhilekh.namovid.GameView.screenRationY;
 
 public class Bullet
 {
-    int x,y;
+    int x,y,width,height;
     Bitmap bullet;
 
     Bullet(Resources res)
     {
         bullet = BitmapFactory.decodeResource(res,R.drawable.bullet);
 
-        int width=bullet.getWidth();
-        int height=bullet.getHeight();
+         width=bullet.getWidth();
+         height=bullet.getHeight();
 
         width/=4;
         height/=4;
@@ -28,5 +29,10 @@ public class Bullet
 
         bullet = Bitmap.createScaledBitmap(bullet,width,height,false);
 
+    }
+
+    Rect getCollisionShape()
+    {
+        return new Rect(x,y,x+width,y+height);
     }
 }

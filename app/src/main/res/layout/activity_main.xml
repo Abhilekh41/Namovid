@@ -17,7 +17,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="48sp"
-        android:text="Go Corona"
+        android:text="Go Corona Go!"
+        android:textStyle="bold"
+        android:textColor="#000000"
         android:layout_above="@id/play"
         android:layout_below="@id/highScore"
         android:layout_centerHorizontal="true"/>

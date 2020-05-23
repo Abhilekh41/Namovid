@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         TextView highScore = findViewById(R.id.highScore);
 
         final SharedPreferences sharedPreferences =  getSharedPreferences("game",MODE_PRIVATE);
-        highScore.setText("HighScore" +  sharedPreferences.getInt("highscore",0));
+        highScore.setText("HighScore : " +  sharedPreferences.getInt("highscore",0));
 
         isMute = sharedPreferences.getBoolean("isMute",false);
 

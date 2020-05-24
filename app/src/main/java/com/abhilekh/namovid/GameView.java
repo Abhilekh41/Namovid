@@ -256,7 +256,7 @@ public class GameView extends SurfaceView implements Runnable{
     {
         try {
             Thread.sleep(1000);
-            activity.startActivity(new Intent(activity,MainActivity.class));
+            activity.startActivity(new Intent(activity, MainActivity.class));
             activity.finish();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -305,7 +305,6 @@ public class GameView extends SurfaceView implements Runnable{
 
     public void newBullet()
     {
-
         if(preferences.getBoolean("isMute",false))
         {
             soundPool.play(sound,1,1,0,0,1);
@@ -314,7 +313,5 @@ public class GameView extends SurfaceView implements Runnable{
         bullet.x = flight.x+flight.width;
         bullet.y = flight.y+(flight.height/2);
         bullets.add(bullet);
-
-
     }
 }

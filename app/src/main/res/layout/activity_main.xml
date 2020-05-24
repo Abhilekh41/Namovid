@@ -54,7 +54,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
         android:id="@+id/volumeCtrl"
-        android:src="@drawable/ic_volume_off_black_24dp"/>
+        android:src="@drawable/ic_volume_up_black_24dp"/>
 
 
 </RelativeLayout>

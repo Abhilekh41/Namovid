@@ -10,38 +10,43 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/background"
+        android:background="@drawable/mainscreen"
         android:scaleType="centerCrop"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="48sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/highScore"
+        android:layout_toLeftOf="@id/highScore"
+        android:textColor="#000000"
         android:text="Go Corona Go!"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_above="@id/play"
-        android:layout_below="@id/highScore"
-        android:layout_centerHorizontal="true"/>
-    
+        android:fontFamily="casual"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
     <TextView
+        android:id="@+id/play"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Play"
-        android:textSize="64sp"
-        android:textColor="#000000"
+        android:layout_height="91dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:id="@+id/play"/>
+        android:fontFamily="casual"
+        android:text="Play"
+        android:textColor="#000000"
+        android:textSize="64sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="High Score"
+        android:fontFamily="casual"
         android:textColor="#000000"
         android:textSize="30sp"
         android:layout_margin="16dp"
         android:layout_alignParentRight="true"
-        android:id="@+id/highScore"/>
+        android:id="@+id/highScore"
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -49,7 +54,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
         android:id="@+id/volumeCtrl"
-        android:src="@drawable/ic_volume_up_black_24dp"/>
+        android:src="@drawable/ic_volume_off_black_24dp"/>
 
 
 </RelativeLayout>

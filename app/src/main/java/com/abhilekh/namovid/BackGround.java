@@ -10,7 +10,7 @@ public class BackGround
     Bitmap background;
 
     public BackGround(int x, int y, Resources resources) {
-       background= BitmapFactory.decodeResource(resources,R.drawable.background);
+       background= BitmapFactory.decodeResource(resources,R.drawable.germs);
        background= Bitmap.createScaledBitmap(background,x,y,false);
     }
 }

@@ -21,12 +21,15 @@ public class GameActivity extends AppCompatActivity {
        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
        getWindowManager().getDefaultDisplay().getSize(point);
 
-        if(mediaPlayer==null)
+        if(MainActivity.isMute)
         {
-            mediaPlayer = MediaPlayer.create(this,R.raw.namovid);
+            if(mediaPlayer==null)
+            {
+                mediaPlayer = MediaPlayer.create(this,R.raw.namovid);
+            }
+            mediaPlayer.setLooping(true);
+            mediaPlayer.start();
         }
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
 
 
        gameView = new GameView(this,point.x,point.y);
@@ -38,7 +41,8 @@ public class GameActivity extends AppCompatActivity {
     {
         super.onPause();
         gameView.pause();
-        mediaPlayer.pause();
+        if(MainActivity.isMute)
+            mediaPlayer.pause();
     }
 
     @Override
@@ -46,6 +50,7 @@ public class GameActivity extends AppCompatActivity {
     {
         super.onResume();
         gameView.resume();
-        mediaPlayer.start();
+        if(MainActivity.isMute)
+            mediaPlayer.start();
     }
 }

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static boolean isMute = true;
+    public static boolean isMute = false;
 
 
     @Override

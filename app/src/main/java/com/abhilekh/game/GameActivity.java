@@ -1,4 +1,4 @@
-package com.abhilekh.namovid;
+package com.abhilekh.game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import com.abhilekh.namovid.R;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -25,7 +27,7 @@ public class GameActivity extends AppCompatActivity {
         {
             if(mediaPlayer==null)
             {
-                mediaPlayer = MediaPlayer.create(this,R.raw.namovid);
+                mediaPlayer = MediaPlayer.create(this, R.raw.namovid);
             }
             mediaPlayer.setLooping(true);
             mediaPlayer.start();

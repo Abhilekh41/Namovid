@@ -1,4 +1,4 @@
-package com.abhilekh.namovid;
+package com.abhilekh.game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.abhilekh.namovid.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.abhilekh.game.MainActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
         android:layout_alignTop="@+id/highScore"
         android:layout_toLeftOf="@id/highScore"
         android:textColor="#000000"
-        android:text="Go Corona Go!"
+        android:text="Go Karuna Go!"
         android:fontFamily="casual"
         android:textSize="25sp"
         android:textStyle="bold" />

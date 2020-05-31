@@ -1,12 +1,11 @@
-package com.abhilekh.namovid;
+package com.abhilekh.game;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 
-import static com.abhilekh.namovid.GameView.screenRationX;
-import static com.abhilekh.namovid.GameView.screenRationY;
+import com.abhilekh.namovid.R;
 
 public class Flight
 {
@@ -18,7 +17,7 @@ public class Flight
 
      Flight(GameView gameView,int screenY, Resources res) {
          this.gameView = gameView;
-        flight1= BitmapFactory.decodeResource(res,R.drawable.modiji1);
+        flight1= BitmapFactory.decodeResource(res, R.drawable.modiji1);
         flight2= BitmapFactory.decodeResource(res,R.drawable.modiji2);
         modijiDead = BitmapFactory.decodeResource(res,R.drawable.modijidead);
 
@@ -29,15 +28,15 @@ public class Flight
         width/=4;
         height/=4;
 
-        width = (int)(width *  screenRationX);
-        height = (int)(height *   screenRationY);
+        width = (int)(width *  GameView.screenRationX);
+        height = (int)(height *   GameView.screenRationY);
 
         flight1=Bitmap.createScaledBitmap(flight1,width,height,false);
         flight2=Bitmap.createScaledBitmap(flight2,width,height,false);
         modijiDead = Bitmap.createScaledBitmap(modijiDead,width,height,false);
 
          y=screenY/2;
-         x=(int) (64 * screenRationX);
+         x=(int) (64 * GameView.screenRationX);
     }
 
     Bitmap getFlight()

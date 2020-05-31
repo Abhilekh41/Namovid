@@ -1,12 +1,14 @@
-package com.abhilekh.namovid;
+package com.abhilekh.game;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 
-import static com.abhilekh.namovid.GameView.screenRationX;
-import static com.abhilekh.namovid.GameView.screenRationY;
+import com.abhilekh.namovid.R;
+
+import static com.abhilekh.game.GameView.screenRationX;
+import static com.abhilekh.game.GameView.screenRationY;
 
 public class Virus
 {
@@ -20,11 +22,11 @@ public class Virus
 
     Virus(Resources resources)
     {
-        virus1 = BitmapFactory.decodeResource(resources,R.drawable.coronavirus);
-        virus2 = BitmapFactory.decodeResource(resources,R.drawable.coronavirus);
-        virus3 = BitmapFactory.decodeResource(resources,R.drawable.coronavirus);
-        virus4 = BitmapFactory.decodeResource(resources,R.drawable.coronavirus);
-        virus5 = BitmapFactory.decodeResource(resources,R.drawable.coronavirus);
+        virus1 = BitmapFactory.decodeResource(resources, R.drawable.virus);
+        virus2 = BitmapFactory.decodeResource(resources,R.drawable.virus);
+        virus3 = BitmapFactory.decodeResource(resources,R.drawable.virus);
+        virus4 = BitmapFactory.decodeResource(resources,R.drawable.virus);
+        virus5 = BitmapFactory.decodeResource(resources,R.drawable.virus);
 
         width = virus1.getWidth();
         height = virus1.getHeight();

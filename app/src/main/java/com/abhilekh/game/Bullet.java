@@ -1,12 +1,14 @@
-package com.abhilekh.namovid;
+package com.abhilekh.game;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 
-import static com.abhilekh.namovid.GameView.screenRationX;
-import static com.abhilekh.namovid.GameView.screenRationY;
+import com.abhilekh.namovid.R;
+
+import static com.abhilekh.game.GameView.screenRationX;
+import static com.abhilekh.game.GameView.screenRationY;
 
 public class Bullet
 {
@@ -15,7 +17,7 @@ public class Bullet
 
     Bullet(Resources res)
     {
-        bullet = BitmapFactory.decodeResource(res,R.drawable.bullet);
+        bullet = BitmapFactory.decodeResource(res, R.drawable.bullet);
 
          width=bullet.getWidth();
          height=bullet.getHeight();

@@ -1,4 +1,4 @@
-package com.abhilekh.namovid;
+package com.abhilekh.game;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.media.SoundPool;
 import android.os.Build;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
+
+import com.abhilekh.namovid.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +81,7 @@ public class GameView extends SurfaceView implements Runnable{
             soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
         }
 
-        sound = soundPool.load(activity,R.raw.shoot,1);
+        sound = soundPool.load(activity, R.raw.shoot,1);
 
         flight = new Flight(this,screeny,getResources());
 
